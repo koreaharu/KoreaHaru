@@ -5,11 +5,8 @@ import { useTranslations } from 'next-intl';
 import { KakaoIcon, LineIcon, WhatsAppIcon, WeChatIcon, TelegramIcon } from '@/components/ui/MessengerIcons';
 
 const MESSENGERS = [
-  { key: 'kakao', href: 'https://pf.kakao.com/_koreaharu/chat', bg: '#FAE100', fg: '#3C1E1E', Icon: KakaoIcon },
-  { key: 'line', href: 'https://line.me/R/ti/p/@koreaharu', bg: '#06C755', fg: '#ffffff', Icon: LineIcon },
-  { key: 'whatsapp', href: 'https://wa.me/821000000000', bg: '#25D366', fg: '#ffffff', Icon: WhatsAppIcon },
-  { key: 'wechat', href: '#', bg: '#07C160', fg: '#ffffff', Icon: WeChatIcon },
-  { key: 'telegram', href: 'https://t.me/koreaharu', bg: '#229ED9', fg: '#ffffff', Icon: TelegramIcon },
+  { key: 'whatsapp', href: 'https://wa.me/821092099855', bg: '#25D366', fg: '#ffffff', Icon: WhatsAppIcon },
+  { key: 'telegram', href: 'https://t.me/+821092099855', bg: '#229ED9', fg: '#ffffff', Icon: TelegramIcon },
 ] as const;
 
 export function MessengerWidget() {

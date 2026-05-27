@@ -4,11 +4,8 @@ import { Button } from '@/components/ui/Button';
 import { KakaoIcon, LineIcon, WhatsAppIcon, WeChatIcon, TelegramIcon } from '@/components/ui/MessengerIcons';
 
 const MESSENGERS = [
-  { key: 'kakao', bg: '#FAE100', fg: '#3C1E1E', href: 'https://pf.kakao.com/_koreaharu/chat', Icon: KakaoIcon },
-  { key: 'line', bg: '#06C755', fg: '#ffffff', href: 'https://line.me/R/ti/p/@koreaharu', Icon: LineIcon },
-  { key: 'whatsapp', bg: '#25D366', fg: '#ffffff', href: 'https://wa.me/821000000000', Icon: WhatsAppIcon },
-  { key: 'wechat', bg: '#07C160', fg: '#ffffff', href: '#', Icon: WeChatIcon },
-  { key: 'telegram', bg: '#229ED9', fg: '#ffffff', href: 'https://t.me/koreaharu', Icon: TelegramIcon },
+  { key: 'whatsapp', bg: '#25D366', fg: '#ffffff', href: 'https://wa.me/821092099855', Icon: WhatsAppIcon },
+  { key: 'telegram', bg: '#229ED9', fg: '#ffffff', href: 'https://t.me/+821092099855', Icon: TelegramIcon },
 ] as const;
 
 export function CtaStrip() {
