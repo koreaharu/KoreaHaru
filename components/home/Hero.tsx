@@ -40,6 +40,11 @@ export function Hero() {
             {t('cta_secondary')}
           </Button>
         </div>
+
+        {/* Mobile Real-time Exchange Rate Widget */}
+        <div className="mt-12 block md:hidden w-full max-w-[330px] mx-auto">
+          <ExchangeRateWidget />
+        </div>
       </Container>
 
       {/* Floating Real-time Exchange Rate Widget */}

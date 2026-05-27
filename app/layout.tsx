@@ -5,6 +5,7 @@ import { getMessages } from 'next-intl/server';
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SiteFooter } from '@/components/layout/SiteFooter';
 import { MessengerWidget } from '@/components/layout/MessengerWidget';
+import { MobileStickyContact } from '@/components/layout/MobileStickyContact';
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({
@@ -45,9 +46,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <NextIntlClientProvider messages={messages}>
           <SiteHeader />
-          <main>{children}</main>
+          <main className="pb-24 md:pb-0">{children}</main>
           <SiteFooter />
           <MessengerWidget />
+          <MobileStickyContact />
         </NextIntlClientProvider>
       </body>
     </html>
