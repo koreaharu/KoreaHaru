@@ -1,0 +1,17 @@
+<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tracks -->
+  <line x1="35" y1="65" x2="85" y2="65" stroke="#C4922F" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="35" y1="73" x2="85" y2="73" stroke="#C4922F" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <!-- Train car body -->
+  <rect x="30" y="40" width="60" height="20" rx="2" stroke="#C4922F" stroke-width="2.5" fill="none"/>
+
+  <!-- Train windows -->
+  <rect x="38" y="47" width="7" height="6" stroke="#C4922F" stroke-width="1" fill="none"/>
+  <rect x="50" y="47" width="7" height="6" stroke="#C4922F" stroke-width="1" fill="none"/>
+  <rect x="62" y="47" width="7" height="6" stroke="#C4922F" stroke-width="1" fill="none"/>
+
+  <!-- Wheels -->
+  <circle cx="40" cy="72" r="5" stroke="#C4922F" stroke-width="2" fill="none"/>
+  <circle cx="70" cy="72" r="5" stroke="#C4922F" stroke-width="2" fill="none"/>
+</svg>

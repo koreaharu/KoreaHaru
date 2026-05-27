@@ -1,0 +1,19 @@
+<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Car side view -->
+  <path d="M20 70h80" stroke="#C4922F" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Car body -->
+  <path d="M25 70 L30 45 Q30 40 35 40 L85 40 Q90 40 90 45 L95 70" stroke="#C4922F" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+
+  <!-- Windshield -->
+  <path d="M35 48 L50 42" stroke="#C4922F" stroke-width="1.5" fill="none"/>
+  <path d="M70 42 L85 48" stroke="#C4922F" stroke-width="1.5" fill="none"/>
+
+  <!-- Wheels -->
+  <circle cx="35" cy="75" r="7" stroke="#C4922F" stroke-width="2.5" fill="none"/>
+  <circle cx="85" cy="75" r="7" stroke="#C4922F" stroke-width="2.5" fill="none"/>
+
+  <!-- Wheel details -->
+  <circle cx="35" cy="75" r="4" stroke="#C4922F" stroke-width="1.5" fill="none"/>
+  <circle cx="85" cy="75" r="4" stroke="#C4922F" stroke-width="1.5" fill="none"/>
+</svg>

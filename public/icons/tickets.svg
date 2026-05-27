@@ -1,0 +1,15 @@
+<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ticket -->
+  <rect x="20" y="35" width="80" height="50" rx="3" stroke="#C4922F" stroke-width="2.5" fill="none"/>
+
+  <!-- Perforation line -->
+  <line x1="55" y1="35" x2="55" y2="85" stroke="#C4922F" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+  <!-- Text placeholder left -->
+  <line x1="28" y1="48" x2="48" y2="48" stroke="#C4922F" stroke-width="1" stroke-linecap="round"/>
+  <line x1="28" y1="58" x2="48" y2="58" stroke="#C4922F" stroke-width="1" stroke-linecap="round"/>
+  <line x1="28" y1="68" x2="48" y2="68" stroke="#C4922F" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Star right -->
+  <path d="M72 48 L75 55 L82 56 L76 62 L78 69 L72 65 L66 69 L68 62 L62 56 L69 55 Z" stroke="#C4922F" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+</svg>
