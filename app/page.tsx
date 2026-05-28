@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { EditorialHero } from '@/components/home/EditorialHero';
 import { ExchangeRateWidget } from '@/components/home/ExchangeRateWidget';
 import { DirectBookingWidget } from '@/components/home/DirectBookingWidget';
-import { QuickBookingBar } from '@/components/home/QuickBookingBar';
 import { ServiceCategories } from '@/components/home/ServiceCategories';
 import { FeaturedDestinations } from '@/components/home/FeaturedDestinations';
 import { WhyKoreaHaru } from '@/components/home/WhyKoreaHaru';
@@ -42,7 +41,6 @@ export default function HomePage() {
       </section>
 
       <FeaturedDestinations />
-      <QuickBookingBar />
       <ServiceCategories />
       <WhyKoreaHaru />
       <Testimonials />
