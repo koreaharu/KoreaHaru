@@ -76,12 +76,13 @@ export function ServiceCategories() {
           <p className="mt-6 text-base leading-relaxed text-ink-600">{t('subtitle')}</p>
         </header>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Responsive layout: Swiping slider on mobile, Grid on desktop */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 scrollbar-none md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 md:pb-0 md:overflow-visible">
           {CATEGORIES.map((cat) => (
             <Link
               key={cat.slug}
               href={`/services/${cat.slug}`}
-              className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden"
+              className="group relative flex aspect-[4/3] flex-col justify-end overflow-hidden shrink-0 w-[250px] sm:w-[280px] snap-center md:w-auto md:shrink rounded-sm border border-cream-200/20 shadow-sm text-left"
             >
               <Image
                 src={cat.image}
@@ -98,7 +99,7 @@ export function ServiceCategories() {
               )}
               <div className="relative p-6">
                 <h3 className="font-serif text-xl font-light text-cream-50">{tc(cat.key)}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-cream-100/75">{tc(`${cat.key}_desc`)}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-cream-100/75 font-light">{tc(`${cat.key}_desc`)}</p>
               </div>
             </Link>
           ))}

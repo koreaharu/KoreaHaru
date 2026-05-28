@@ -7,7 +7,7 @@ export function Hero() {
   const t = useTranslations('home.hero');
 
   return (
-    <section className="relative h-[75vh] md:h-[88vh] min-h-[450px] w-full overflow-hidden bg-ink-900">
+    <section className="relative h-[55vh] md:h-[88vh] min-h-[380px] md:min-h-[450px] w-full overflow-hidden bg-ink-900">
       <Image
         src="/images/home/hero.png"
         alt="Night view of Busan from Hwangnyeongsan"

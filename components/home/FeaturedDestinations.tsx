@@ -28,13 +28,13 @@ export function FeaturedDestinations() {
           </div>
         </header>
 
-        {/* Uniform 5-Column Grid with Equal Aspect Ratio Cards */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        {/* Responsive layout: Swiping slider on mobile, Grid on desktop */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 scrollbar-none md:grid md:grid-cols-3 lg:grid-cols-5 md:gap-4 md:pb-0 md:overflow-visible">
           {DESTINATIONS.map((d) => (
             <Link
               key={d.slug}
               href={`/destinations/${d.slug}`}
-              className="group relative block overflow-hidden aspect-[4/3] rounded-sm border border-cream-200/20 shadow-sm hover:shadow-lg transition-all"
+              className="group relative block overflow-hidden aspect-[4/3] rounded-sm border border-cream-200/20 shadow-sm hover:shadow-lg transition-all shrink-0 w-[250px] sm:w-[280px] snap-center md:w-auto md:shrink"
             >
               <Image
                 src={d.image}

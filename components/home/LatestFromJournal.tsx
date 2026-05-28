@@ -37,14 +37,14 @@ export function LatestFromJournal() {
           <h2 className="mt-4 text-4xl font-light md:text-5xl">{t('title')}</h2>
         </header>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 scrollbar-none md:grid md:grid-cols-3 md:gap-10 md:pb-0 md:overflow-visible">
           {POSTS.map((post) => (
             <Link
               key={post.key}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col"
+              className="group flex flex-col shrink-0 w-[270px] sm:w-[310px] snap-center md:w-auto md:shrink text-left"
             >
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-cream-200/20 shadow-sm">
                 <Image
                   src={post.image}
                   alt={t(`posts.${post.key}_title`)}
@@ -54,15 +54,15 @@ export function LatestFromJournal() {
                 />
               </div>
               <div className="mt-6 flex items-center gap-4">
-                <span className="text-[10px] uppercase tracking-[0.2em] text-gold-700">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-gold-700 font-semibold">
                   {t(`posts.${post.key}_category`)}
                 </span>
                 <span className="text-xs text-ink-400">{t(`posts.${post.key}_read`)}</span>
               </div>
-              <h3 className="mt-3 font-serif text-2xl font-normal leading-snug text-ink-800 transition-colors group-hover:text-gold-700">
+              <h3 className="mt-3 font-serif text-2xl font-normal leading-snug text-ink-800 transition-colors group-hover:text-gold-700 line-clamp-2">
                 {t(`posts.${post.key}_title`)}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-600">
+              <p className="mt-3 text-sm leading-relaxed text-ink-600 line-clamp-3 font-light">
                 {t(`posts.${post.key}_excerpt`)}
               </p>
             </Link>
