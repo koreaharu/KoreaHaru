@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { DollarSign, Euro, TrendingUp, RefreshCw } from 'lucide-react';
+import { TrendingUp, RefreshCw } from 'lucide-react';
 
 interface ExchangeRates {
   USD: number;
@@ -24,7 +24,6 @@ export function ExchangeRateWidget() {
   const fetchRates = async () => {
     setLoading(true);
     try {
-      // Fetch latest rates with USD base (extremely reliable and fast CDN)
       const res = await fetch('https://open.er-api.com/v6/latest/USD');
       if (!res.ok) throw new Error('API failed');
       const data = await res.json();
@@ -32,7 +31,6 @@ export function ExchangeRateWidget() {
       if (data && data.rates && data.rates.KRW) {
         const krw = data.rates.KRW;
         
-        // Calculate rates relative to KRW
         const usdRate = krw; // USD to KRW
         const eurRate = krw / data.rates.EUR; // EUR to KRW
         const thbRate = krw / data.rates.THB; // THB to KRW
@@ -60,17 +58,16 @@ export function ExchangeRateWidget() {
 
   useEffect(() => {
     fetchRates();
-    // Auto refresh every 5 minutes
     const interval = setInterval(fetchRates, 300000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <article className="w-full max-w-[330px] bg-ink-900 border border-gold-500/20 p-6 rounded-sm shadow-xl text-left select-none animate-fade-in transition-all hover:border-gold-500/30">
-      <header className="flex items-center justify-between border-b border-cream-100/10 pb-3.5 mb-5">
+    <article className="w-full max-w-[330px] bg-white border border-cream-300 p-6 rounded-sm shadow-[0_15px_40px_rgba(201,168,122,0.12)] text-left select-none animate-fade-in transition-all duration-300 hover:border-gold-500/30">
+      <header className="flex items-center justify-between border-b border-cream-200 pb-3.5 mb-5">
         <div className="flex items-center gap-2">
-          <TrendingUp className="h-5 w-5 text-gold-400" />
-          <h3 className="font-serif text-base font-normal tracking-wide text-cream-100">Live Exchange Rates</h3>
+          <TrendingUp className="h-5 w-5 text-gold-600" />
+          <h3 className="font-serif text-base font-semibold tracking-wide text-ink-900">Live Exchange Rates</h3>
         </div>
         <div className="flex items-center gap-1.5">
           {isLive ? (
@@ -79,9 +76,9 @@ export function ExchangeRateWidget() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-sage"></span>
             </span>
           ) : (
-            <span className="h-2 w-2 rounded-full bg-cream-300/30"></span>
+            <span className="h-2 w-2 rounded-full bg-cream-300"></span>
           )}
-          <span className="text-xs text-cream-200/50 uppercase tracking-widest font-medium">
+          <span className="text-[10px] text-ink-400 uppercase tracking-widest font-bold">
             {isLive ? 'Live' : 'Muted'}
           </span>
         </div>
@@ -89,44 +86,44 @@ export function ExchangeRateWidget() {
 
       <div className="space-y-4">
         {/* USD */}
-        <div className="flex items-center justify-between">
-          <span className="text-sm font-semibold text-cream-100 tracking-wider">USD</span>
-          <p className="font-serif text-base font-light text-cream-50 tracking-wide">
+        <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
+          <span className="text-xs font-bold text-ink-500 tracking-wider">USD</span>
+          <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
             {loading ? '...' : `1 USD = ${rates.USD.toLocaleString()} KRW`}
           </p>
         </div>
 
         {/* EUR */}
-        <div className="flex items-center justify-between">
-          <span className="text-sm font-semibold text-cream-100 tracking-wider">EUR</span>
-          <p className="font-serif text-base font-light text-cream-50 tracking-wide">
+        <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
+          <span className="text-xs font-bold text-ink-500 tracking-wider">EUR</span>
+          <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
             {loading ? '...' : `1 EUR = ${rates.EUR.toLocaleString()} KRW`}
           </p>
         </div>
 
         {/* THB */}
-        <div className="flex items-center justify-between">
-          <span className="text-sm font-semibold text-cream-100 tracking-wider">THB</span>
-          <p className="font-serif text-base font-light text-cream-50 tracking-wide">
+        <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
+          <span className="text-xs font-bold text-ink-500 tracking-wider">THB</span>
+          <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
             {loading ? '...' : `1 THB = ${rates.THB.toLocaleString()} KRW`}
           </p>
         </div>
 
         {/* VND */}
-        <div className="flex items-center justify-between">
-          <span className="text-sm font-semibold text-cream-100 tracking-wider">VND</span>
-          <p className="font-serif text-base font-light text-cream-50 tracking-wide">
+        <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
+          <span className="text-xs font-bold text-ink-500 tracking-wider">VND</span>
+          <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
             {loading ? '...' : `1,000 VND = ${rates.VND.toLocaleString()} KRW`}
           </p>
         </div>
       </div>
 
-      <footer className="mt-5 pt-3.5 border-t border-cream-100/5 flex items-center justify-between text-[10px] text-cream-200/40">
+      <footer className="mt-5 pt-3.5 border-t border-cream-200 flex items-center justify-between text-[10px] text-ink-400 font-medium">
         <span>As of {lastUpdated}</span>
         <button 
           onClick={fetchRates}
           disabled={loading}
-          className="flex items-center gap-1.5 hover:text-cream-100 transition-colors disabled:opacity-50 text-[10px] font-medium"
+          className="flex items-center gap-1.5 hover:text-gold-600 transition-colors disabled:opacity-50 text-[10px] font-semibold"
           title="Refresh rates"
         >
           <RefreshCw className={`h-3 w-3 ${loading ? 'animate-spin' : ''}`} />

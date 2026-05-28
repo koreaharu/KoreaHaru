@@ -105,14 +105,14 @@ export function DirectBookingWidget() {
   const active = COMPARISONS[activeIndex];
 
   return (
-    <article className="bg-ink-900 border border-gold-500/20 p-5 px-6 rounded-sm shadow-xl select-none animate-fade-in transition-all hover:border-gold-500/30 flex flex-col gap-4 w-full max-w-4xl mx-auto">
+    <article className="bg-white border border-gold-500/20 p-5 px-6 rounded-sm shadow-[0_15px_40px_rgba(201,168,122,0.12)] select-none animate-fade-in transition-all hover:border-gold-500/30 flex flex-col gap-4 w-full max-w-4xl mx-auto text-left">
       
       {/* TIER 1 (TOP ROW): Direct Platform Links exactly as they were */}
       <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-5 w-full">
         {/* Title Section */}
-        <div className="flex items-center gap-2.5 lg:border-r lg:border-cream-100/10 lg:pr-5 shrink-0">
-          <Shield className="h-5.5 w-5.5 text-gold-400" />
-          <span className="font-serif text-sm font-semibold tracking-widest text-cream-100 uppercase">
+        <div className="flex items-center gap-2.5 lg:border-r lg:border-cream-200 lg:pr-5 shrink-0">
+          <Shield className="h-5.5 w-5.5 text-gold-600" />
+          <span className="font-serif text-sm font-semibold tracking-widest text-ink-900 uppercase">
             Booking Channels
           </span>
         </div>
@@ -125,7 +125,7 @@ export function DirectBookingWidget() {
               href={c.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 py-2 md:px-5 md:py-2.5 rounded-sm border border-white/5 bg-white/5 transition-all hover:bg-white/10 hover:border-white/20 group shrink-0"
+              className="flex items-center gap-2 px-3 py-2 md:px-5 md:py-2.5 rounded-sm border border-cream-200 bg-cream-50/40 transition-all hover:bg-cream-100 hover:border-gold-500/30 group shrink-0"
             >
               <span 
                 className="flex h-5 w-5 md:h-6.5 md:w-6.5 items-center justify-center rounded-full text-[10px] md:text-xs font-extrabold shrink-0"
@@ -137,30 +137,30 @@ export function DirectBookingWidget() {
               >
                 {c.symbol}
               </span>
-              <span className="text-xs md:text-sm font-bold text-cream-100 tracking-wider group-hover:text-cream-50 transition-colors">
+              <span className="text-xs md:text-sm font-bold text-ink-900 tracking-wider group-hover:text-gold-600 transition-colors">
                 {c.name}
               </span>
-              <ExternalLink className="h-3 w-3 md:h-3.5 md:w-3.5 text-cream-200/35 group-hover:text-gold-400 transition-colors" />
+              <ExternalLink className="h-3 w-3 md:h-3.5 md:w-3.5 text-ink-400/50 group-hover:text-gold-600 transition-colors" />
             </a>
           ))}
         </div>
       </div>
 
       {/* Divider */}
-      <div className="w-full h-[1px] bg-cream-100/10" />
+      <div className="w-full h-[1px] bg-cream-200" />
 
       {/* TIER 2 (BOTTOM ROW): Direct Booking Savings Ticker & Golden CTA */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full gap-5">
         
         {/* Left: Sparkles & Title */}
         <div className="flex flex-col md:flex-row md:items-center gap-4 w-full lg:w-auto">
-          <div className="flex items-center gap-2.5 md:border-r md:border-cream-100/10 md:pr-5 shrink-0">
-            <Sparkles className="h-5.5 w-5.5 text-gold-400" />
+          <div className="flex items-center gap-2.5 md:border-r md:border-cream-200 md:pr-5 shrink-0">
+            <Sparkles className="h-5.5 w-5.5 text-gold-600" />
             <div className="flex flex-col text-left">
-              <span className="font-serif text-xs font-semibold tracking-widest text-cream-100 uppercase">
+              <span className="font-serif text-xs font-semibold tracking-widest text-ink-900 uppercase">
                 Direct Savings
               </span>
-              <span className="text-[9px] font-bold text-gold-400 tracking-wider uppercase">
+              <span className="text-[9px] font-bold text-gold-600 tracking-wider uppercase">
                 Save 15% – 20% Fees
               </span>
             </div>
@@ -168,18 +168,18 @@ export function DirectBookingWidget() {
 
           {/* Rotating Comparison Ticker */}
           <div className="h-12 md:h-10 flex flex-col justify-center min-w-0 md:min-w-[340px] w-full text-left">
-            <div className="text-[10px] text-cream-200/50 uppercase tracking-widest font-semibold flex items-center gap-1.5 flex-wrap">
+            <div className="text-[10px] text-ink-500 uppercase tracking-widest font-semibold flex items-center gap-1.5 flex-wrap">
               <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: active.color }} />
               {active.service}
             </div>
             <div className="flex items-center gap-2 mt-0.5 flex-wrap">
-              <span className="text-xs text-cream-200/70 font-medium">
-                {active.platform}: <span className="line-through text-cream-200/40">{active.platformRate}</span>
+              <span className="text-xs text-ink-600 font-medium">
+                {active.platform}: <span className="line-through text-ink-400/70">{active.platformRate}</span>
               </span>
-              <span className="text-xs text-gold-400 font-extrabold flex items-center gap-1">
-                <ChevronRight className="h-3 w-3 text-gold-400" /> Our Direct: {active.directRate}
+              <span className="text-xs text-gold-700 font-extrabold flex items-center gap-1">
+                <ChevronRight className="h-3 w-3 text-gold-600" /> Our Direct: {active.directRate}
               </span>
-              <span className="text-[10px] px-1.5 py-0.5 bg-gold-400/10 border border-gold-400/30 text-gold-400 font-bold rounded-full uppercase tracking-wider scale-90">
+              <span className="text-[10px] px-1.5 py-0.5 bg-gold-500/10 border border-gold-500/30 text-gold-700 font-bold rounded-full uppercase tracking-wider scale-90">
                 Save {active.savings}
               </span>
             </div>
@@ -191,7 +191,7 @@ export function DirectBookingWidget() {
               onMouseEnter={() => setShowTooltip(true)}
               onMouseLeave={() => setShowTooltip(false)}
               onClick={() => setShowTooltip(!showTooltip)}
-              className="flex items-center justify-center h-8 w-8 rounded-full bg-cream-50/5 border border-cream-100/10 text-cream-200/50 hover:text-cream-50 hover:bg-cream-50/10 hover:border-cream-100/20 transition-all"
+              className="flex items-center justify-center h-8 w-8 rounded-full bg-cream-50 border border-cream-200 text-ink-500 hover:text-gold-600 hover:bg-cream-100 hover:border-gold-500/30 transition-all"
               title="Show Platform Fee Comparison"
             >
               <Info className="h-4.5 w-4.5" />
@@ -199,27 +199,27 @@ export function DirectBookingWidget() {
             
             {/* Interactive Comparison Tooltip */}
             {showTooltip && (
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 w-[300px] sm:w-[360px] max-w-[calc(100vw-48px)] bg-ink-950 border border-cream-100/10 p-5 rounded-sm shadow-2xl text-left animate-fade-in">
-                <h4 className="font-serif text-sm font-semibold text-cream-100 mb-3 flex items-center gap-1.5 border-b border-cream-100/10 pb-2">
-                  <Shield className="h-4 w-4 text-gold-400" />
+              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 w-[300px] sm:w-[360px] max-w-[calc(100vw-48px)] bg-white border border-cream-300 p-5 rounded-sm shadow-[0_15px_40px_rgba(201,168,122,0.15)] text-left animate-fade-in">
+                <h4 className="font-serif text-sm font-semibold text-ink-900 mb-3 flex items-center gap-1.5 border-b border-cream-200 pb-2">
+                  <Shield className="h-4 w-4 text-gold-600" />
                   Platform Fee Comparison (수수료 비교)
                 </h4>
                 <div className="space-y-2.5">
                   {COMPARISONS.map((c) => (
-                    <div key={c.service} className="text-xs flex flex-col gap-1 pb-2 border-b border-cream-100/5 last:border-b-0">
-                      <div className="font-medium text-cream-100">{c.service.split(' (')[0]}</div>
-                      <div className="flex items-center justify-between text-cream-200/60 font-mono">
+                    <div key={c.service} className="text-xs flex flex-col gap-1 pb-2 border-b border-cream-100 last:border-b-0">
+                      <div className="font-medium text-ink-900">{c.service.split(' (')[0]}</div>
+                      <div className="flex items-center justify-between text-ink-500 font-mono">
                         <span>{c.platform} Booking Fee:</span>
-                        <span className="line-through">{c.platformRate}</span>
+                        <span className="line-through text-ink-400">{c.platformRate}</span>
                       </div>
-                      <div className="flex items-center justify-between text-gold-400 font-bold font-mono">
-                        <span className="flex items-center gap-1 text-[11px]"><Check className="h-3 w-3" /> KoreaHaru Direct Rate:</span>
+                      <div className="flex items-center justify-between text-gold-700 font-bold font-mono">
+                        <span className="flex items-center gap-1 text-[11px]"><Check className="h-3 w-3 text-gold-600" /> KoreaHaru Direct Rate:</span>
                         <span>{c.directRate} (Save {c.savings})</span>
                       </div>
                     </div>
                   ))}
                 </div>
-                <p className="mt-3 text-[10px] text-cream-200/40 leading-relaxed text-center">
+                <p className="mt-3 text-[10px] text-ink-400/80 leading-relaxed text-center">
                   ⚠️ 에어비앤비, 클룩 등 플랫폼이 부과하는 15%~20%의 대행 수수료를 즉시 아끼실 수 있습니다.
                 </p>
               </div>
