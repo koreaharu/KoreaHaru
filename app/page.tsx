@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Hero } from '@/components/home/Hero';
+import { ExchangeRateWidget } from '@/components/home/ExchangeRateWidget';
+import { DirectBookingWidget } from '@/components/home/DirectBookingWidget';
 import { QuickBookingBar } from '@/components/home/QuickBookingBar';
 import { ServiceCategories } from '@/components/home/ServiceCategories';
 import { FeaturedDestinations } from '@/components/home/FeaturedDestinations';
@@ -20,6 +22,24 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      
+      {/* Live Travel Dashboard: Real-time Exchange Rates & Booking Channels */}
+      <section className="bg-ink-950 py-10 md:py-12 border-b border-cream-100/10 relative z-20">
+        <div className="mx-auto w-full max-w-7xl px-6 md:px-8">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch lg:justify-between">
+            {/* Exchange Rate Card */}
+            <div className="w-full lg:w-[32%] flex justify-center lg:justify-start">
+              <ExchangeRateWidget />
+            </div>
+            
+            {/* Direct Booking Comparison Ticker & Links */}
+            <div className="w-full lg:w-[68%] flex items-center">
+              <DirectBookingWidget />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FeaturedDestinations />
       <QuickBookingBar />
       <ServiceCategories />

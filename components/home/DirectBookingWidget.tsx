@@ -105,12 +105,12 @@ export function DirectBookingWidget() {
   const active = COMPARISONS[activeIndex];
 
   return (
-    <article className="bg-ink-950/60 backdrop-blur-md border border-cream-100/10 p-5 px-6 rounded-sm shadow-2xl select-none animate-fade-in transition-all hover:bg-ink-950/70 hover:border-cream-100/15 flex flex-col gap-4 w-max max-w-[calc(100vw-64px)]">
+    <article className="bg-ink-950/60 backdrop-blur-md border border-cream-100/10 p-5 px-6 rounded-sm shadow-2xl select-none animate-fade-in transition-all hover:bg-ink-950/70 hover:border-cream-100/15 flex flex-col gap-4 w-full max-w-4xl mx-auto">
       
       {/* TIER 1 (TOP ROW): Direct Platform Links exactly as they were */}
-      <div className="flex items-center gap-5 flex-nowrap w-full">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-5 w-full">
         {/* Title Section */}
-        <div className="flex items-center gap-2.5 border-r border-cream-100/10 pr-5 shrink-0">
+        <div className="flex items-center gap-2.5 lg:border-r lg:border-cream-100/10 lg:pr-5 shrink-0">
           <Shield className="h-5.5 w-5.5 text-gold-400" />
           <span className="font-serif text-sm font-semibold tracking-widest text-cream-100 uppercase">
             Booking Channels
@@ -118,17 +118,17 @@ export function DirectBookingWidget() {
         </div>
 
         {/* Horizontal List of Channels */}
-        <div className="flex items-center gap-3.5 flex-row flex-nowrap">
+        <div className="flex flex-wrap items-center gap-2 md:gap-3.5">
           {CHANNELS.map((c) => (
             <a
               key={c.name}
               href={c.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-5 py-2.5 rounded-sm border border-white/5 bg-white/5 transition-all hover:bg-white/10 hover:border-white/20 group shrink-0"
+              className="flex items-center gap-2 px-3 py-2 md:px-5 md:py-2.5 rounded-sm border border-white/5 bg-white/5 transition-all hover:bg-white/10 hover:border-white/20 group shrink-0"
             >
               <span 
-                className="flex h-6.5 w-6.5 items-center justify-center rounded-full text-xs font-extrabold shrink-0"
+                className="flex h-5 w-5 md:h-6.5 md:w-6.5 items-center justify-center rounded-full text-[10px] md:text-xs font-extrabold shrink-0"
                 style={{ 
                   backgroundColor: c.bgColor, 
                   color: c.color,
@@ -137,10 +137,10 @@ export function DirectBookingWidget() {
               >
                 {c.symbol}
               </span>
-              <span className="text-sm font-bold text-cream-100 tracking-wider group-hover:text-cream-50 transition-colors">
+              <span className="text-xs md:text-sm font-bold text-cream-100 tracking-wider group-hover:text-cream-50 transition-colors">
                 {c.name}
               </span>
-              <ExternalLink className="h-3.5 w-3.5 text-cream-200/35 group-hover:text-gold-400 transition-colors" />
+              <ExternalLink className="h-3 w-3 md:h-3.5 md:w-3.5 text-cream-200/35 group-hover:text-gold-400 transition-colors" />
             </a>
           ))}
         </div>
@@ -150,13 +150,13 @@ export function DirectBookingWidget() {
       <div className="w-full h-[1px] bg-cream-100/10" />
 
       {/* TIER 2 (BOTTOM ROW): Direct Booking Savings Ticker & Golden CTA */}
-      <div className="flex items-center justify-between w-full gap-5 flex-nowrap">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full gap-5">
         
         {/* Left: Sparkles & Title */}
-        <div className="flex items-center gap-4 flex-nowrap shrink-0">
-          <div className="flex items-center gap-2.5 border-r border-cream-100/10 pr-5 shrink-0">
+        <div className="flex flex-col md:flex-row md:items-center gap-4 w-full lg:w-auto">
+          <div className="flex items-center gap-2.5 md:border-r md:border-cream-100/10 md:pr-5 shrink-0">
             <Sparkles className="h-5.5 w-5.5 text-gold-400" />
-            <div className="flex flex-col">
+            <div className="flex flex-col text-left">
               <span className="font-serif text-xs font-semibold tracking-widest text-cream-100 uppercase">
                 Direct Savings
               </span>
@@ -167,12 +167,12 @@ export function DirectBookingWidget() {
           </div>
 
           {/* Rotating Comparison Ticker */}
-          <div className="h-10 flex flex-col justify-center min-w-[340px] transition-all duration-500 ease-in-out shrink-0">
-            <div className="text-[10px] text-cream-200/50 uppercase tracking-widest font-semibold flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: active.color }} />
+          <div className="h-12 md:h-10 flex flex-col justify-center min-w-0 md:min-w-[340px] w-full text-left">
+            <div className="text-[10px] text-cream-200/50 uppercase tracking-widest font-semibold flex items-center gap-1.5 flex-wrap">
+              <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: active.color }} />
               {active.service}
             </div>
-            <div className="flex items-center gap-2 mt-0.5">
+            <div className="flex items-center gap-2 mt-0.5 flex-wrap">
               <span className="text-xs text-cream-200/70 font-medium">
                 {active.platform}: <span className="line-through text-cream-200/40">{active.platformRate}</span>
               </span>
@@ -186,7 +186,7 @@ export function DirectBookingWidget() {
           </div>
 
           {/* Tooltip trigger button */}
-          <div className="relative shrink-0">
+          <div className="relative shrink-0 flex items-center">
             <button 
               onMouseEnter={() => setShowTooltip(true)}
               onMouseLeave={() => setShowTooltip(false)}
@@ -199,7 +199,7 @@ export function DirectBookingWidget() {
             
             {/* Interactive Comparison Tooltip */}
             {showTooltip && (
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 w-[360px] bg-ink-950 border border-cream-100/10 p-5 rounded-sm shadow-2xl text-left animate-fade-in">
+              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 w-[300px] sm:w-[360px] max-w-[calc(100vw-48px)] bg-ink-950 border border-cream-100/10 p-5 rounded-sm shadow-2xl text-left animate-fade-in">
                 <h4 className="font-serif text-sm font-semibold text-cream-100 mb-3 flex items-center gap-1.5 border-b border-cream-100/10 pb-2">
                   <Shield className="h-4 w-4 text-gold-400" />
                   Platform Fee Comparison (수수료 비교)
@@ -230,7 +230,7 @@ export function DirectBookingWidget() {
         {/* Right: Primary Booking CTA */}
         <Link
           href="/booking"
-          className="flex items-center gap-1.5 px-5 py-2.5 bg-gold-500 hover:bg-gold-600 text-ink-950 font-bold text-sm tracking-wider rounded-sm shadow-lg hover:shadow-gold-500/10 transition-all group shrink-0"
+          className="flex items-center justify-center gap-1.5 w-full lg:w-auto px-5 py-3 bg-gold-500 hover:bg-gold-600 text-ink-950 font-bold text-sm tracking-wider rounded-sm shadow-lg hover:shadow-gold-500/10 transition-all group shrink-0"
         >
           Book Direct & Save
           <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

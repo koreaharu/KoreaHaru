@@ -2,14 +2,12 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
-import { ExchangeRateWidget } from '@/components/home/ExchangeRateWidget';
-import { DirectBookingWidget } from '@/components/home/DirectBookingWidget';
 
 export function Hero() {
   const t = useTranslations('home.hero');
 
   return (
-    <section className="relative h-[88vh] min-h-[600px] w-full overflow-hidden bg-ink-900">
+    <section className="relative h-[75vh] md:h-[88vh] min-h-[450px] w-full overflow-hidden bg-ink-900">
       <Image
         src="/images/home/hero.png"
         alt="Night view of Busan from Hwangnyeongsan"
@@ -22,13 +20,15 @@ export function Hero() {
 
       <Container className="relative flex h-full flex-col items-center justify-center text-center text-cream-50">
         <p className="eyebrow text-cream-50/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">{t('eyebrow')}</p>
-        <h1 className="mt-6 max-w-4xl font-serif text-5xl font-light leading-tight text-cream-50 drop-shadow-[0_4px_12px_rgba(0,0,0,0.95)] md:text-7xl">
+        <h1 className="mt-6 max-w-4xl font-serif text-4xl font-light leading-tight text-cream-50 drop-shadow-[0_4px_12px_rgba(0,0,0,0.95)] md:text-7xl">
           {t('title')}
         </h1>
-        <p className="mt-8 max-w-2xl text-base leading-relaxed text-cream-50/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] font-medium md:text-lg">
+        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-cream-50/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] font-medium md:text-lg">
           {t('subtitle')}
         </p>
-        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+        
+        {/* Hero buttons - hidden on mobile to avoid CTA redundancy */}
+        <div className="mt-10 hidden sm:flex flex-col gap-3 sm:flex-row">
           <Button href="/booking" variant="primary" size="lg">
             {t('cta_primary')}
           </Button>
@@ -40,22 +40,7 @@ export function Hero() {
             {t('cta_secondary')}
           </Button>
         </div>
-
-        {/* Mobile Real-time Exchange Rate Widget */}
-        <div className="mt-12 block md:hidden w-full max-w-[330px] mx-auto">
-          <ExchangeRateWidget />
-        </div>
       </Container>
-
-      {/* Floating Real-time Exchange Rate Widget */}
-      <div className="absolute top-8 right-8 z-10 hidden md:block">
-        <ExchangeRateWidget />
-      </div>
-
-      {/* Floating Direct Platform Booking Links */}
-      <div className="absolute bottom-8 left-8 z-10 hidden md:block w-max max-w-[calc(100vw-64px)]">
-        <DirectBookingWidget />
-      </div>
     </section>
   );
 }
