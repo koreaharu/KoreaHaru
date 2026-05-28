@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import { Hero } from '@/components/home/Hero';
+import { EditorialHero } from '@/components/home/EditorialHero';
 import { ExchangeRateWidget } from '@/components/home/ExchangeRateWidget';
 import { DirectBookingWidget } from '@/components/home/DirectBookingWidget';
-import { FeaturedEditorialBoard } from '@/components/home/FeaturedEditorialBoard';
 import { QuickBookingBar } from '@/components/home/QuickBookingBar';
 import { ServiceCategories } from '@/components/home/ServiceCategories';
 import { FeaturedDestinations } from '@/components/home/FeaturedDestinations';
@@ -22,7 +21,8 @@ export const metadata: Metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      {/* Editorial Split-Screen Hero acting as the ultimate high-fashion magazine cover */}
+      <EditorialHero />
       
       {/* Live Travel Dashboard: Real-time Exchange Rates & Booking Channels */}
       <section className="bg-cream-100/60 py-10 md:py-12 border-b border-cream-300 relative z-20">
@@ -40,9 +40,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Featured Editorial Board (Magazine-cover Choice Card) */}
-      <FeaturedEditorialBoard />
 
       <FeaturedDestinations />
       <QuickBookingBar />
