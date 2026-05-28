@@ -105,7 +105,7 @@ export function DirectBookingWidget() {
   const active = COMPARISONS[activeIndex];
 
   return (
-    <article className="bg-ink-950/60 backdrop-blur-md border border-cream-100/10 p-5 px-6 rounded-sm shadow-2xl select-none animate-fade-in transition-all hover:bg-ink-950/70 hover:border-cream-100/15 flex flex-col gap-4 w-full max-w-4xl mx-auto">
+    <article className="bg-ink-900 border border-gold-500/20 p-5 px-6 rounded-sm shadow-xl select-none animate-fade-in transition-all hover:border-gold-500/30 flex flex-col gap-4 w-full max-w-4xl mx-auto">
       
       {/* TIER 1 (TOP ROW): Direct Platform Links exactly as they were */}
       <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-5 w-full">

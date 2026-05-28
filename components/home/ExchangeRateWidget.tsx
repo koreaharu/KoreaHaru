@@ -66,7 +66,7 @@ export function ExchangeRateWidget() {
   }, []);
 
   return (
-    <article className="w-full max-w-[330px] bg-ink-950/45 backdrop-blur-md border border-cream-100/10 p-6 rounded-sm shadow-2xl text-left select-none animate-fade-in transition-all hover:bg-ink-950/55 hover:border-cream-100/15">
+    <article className="w-full max-w-[330px] bg-ink-900 border border-gold-500/20 p-6 rounded-sm shadow-xl text-left select-none animate-fade-in transition-all hover:border-gold-500/30">
       <header className="flex items-center justify-between border-b border-cream-100/10 pb-3.5 mb-5">
         <div className="flex items-center gap-2">
           <TrendingUp className="h-5 w-5 text-gold-400" />

@@ -24,7 +24,7 @@ export default function HomePage() {
       <Hero />
       
       {/* Live Travel Dashboard: Real-time Exchange Rates & Booking Channels */}
-      <section className="bg-ink-950 py-10 md:py-12 border-b border-cream-100/10 relative z-20">
+      <section className="bg-cream-100/60 py-10 md:py-12 border-b border-cream-300 relative z-20">
         <div className="mx-auto w-full max-w-7xl px-6 md:px-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch lg:justify-between">
             {/* Exchange Rate Card */}

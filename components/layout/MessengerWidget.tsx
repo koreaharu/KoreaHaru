@@ -14,7 +14,7 @@ export function MessengerWidget() {
   const t = useTranslations('messengers');
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-6 right-6 z-50 hidden md:flex flex-col items-end gap-3">
       {open && (
         <div className="flex flex-col gap-2 animate-fade-in">
           {MESSENGERS.map((m) => (
