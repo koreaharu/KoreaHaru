@@ -15,7 +15,7 @@ export function SiteHeader() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-cream-300 bg-cream-50/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 bg-white/70 backdrop-blur-md">
       <Container>
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-baseline gap-2">

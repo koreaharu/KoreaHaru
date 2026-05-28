@@ -63,7 +63,7 @@ export function ExchangeRateWidget() {
   }, []);
 
   return (
-    <article className="w-full max-w-[330px] bg-white border border-cream-300 p-6 rounded-sm shadow-[0_15px_40px_rgba(201,168,122,0.12)] text-left select-none animate-fade-in transition-all duration-300 hover:border-gold-500/30">
+    <article className="w-full max-w-[330px] bg-white border border-cream-200/50 p-6 rounded-sm shadow-[0_20px_50px_rgba(201,168,122,0.08)] text-left select-none animate-fade-in transition-all duration-300 hover:border-gold-500/20 hover:shadow-[0_20px_50px_rgba(201,168,122,0.12)]">
       <header className="flex items-center justify-between border-b border-cream-200 pb-3.5 mb-5">
         <div className="flex items-center gap-2">
           <TrendingUp className="h-5 w-5 text-gold-600" />

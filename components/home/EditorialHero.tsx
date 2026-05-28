@@ -7,47 +7,52 @@ import { Clock, ArrowRight, Sparkles } from 'lucide-react';
 
 export function EditorialHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-cream-50 border-b border-cream-300 relative z-20">
+    <section className="relative w-full overflow-hidden bg-cream-50 relative z-20">
       
       {/* Editorial Split Screen Container */}
       <div className="w-full flex flex-col lg:flex-row lg:items-stretch lg:min-h-[75vh]">
         
-        {/* Left Side: Cinematic Magazine Cover Visual */}
-        <div className="relative w-full lg:w-[52%] aspect-[4/3] lg:aspect-auto min-h-[350px] md:min-h-[500px] overflow-hidden bg-ink-950 shrink-0">
-          <Image
-            src="/images/blog/busan_yeongdo_sunset.png"
-            alt="Busan's Rugged Soul: Yeongdo"
-            fill
-            priority
-            sizes="(min-width: 1024px) 55vw, 100vw"
-            className="object-cover opacity-85 transition-transform duration-[12s] ease-out scale-101 hover:scale-103"
-          />
-          {/* Faint gold/sepia overlay matching the user mockup */}
-          <div className="absolute inset-0 bg-[#C9A87A]/10 mix-blend-multiply pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/20 to-transparent pointer-events-none" />
-          
-          {/* Magazine Cover Overlay Elements */}
-          <div className="absolute inset-0 p-8 flex flex-col justify-between text-left select-none pointer-events-none">
-            {/* Top Row */}
-            <div className="flex items-center justify-between">
-              <span className="bg-white/10 backdrop-blur-md text-cream-50 border border-white/20 px-3.5 py-1.5 text-[8px] font-sans font-bold uppercase tracking-[0.25em] shadow-lg rounded-xs">
-                Concierge Choice
-              </span>
-              <span className="text-[9px] uppercase tracking-[0.3em] text-cream-100/50 font-bold font-serif hidden sm:inline">
-                JOURNEYS
-              </span>
-            </div>
+        {/* Left Side: Padded, High-Fashion Floating Magazine Cover Card */}
+        <div className="w-full lg:w-[52%] bg-cream-50/60 p-8 sm:p-10 lg:p-12 xl:p-16 flex items-center justify-center shrink-0 relative min-h-[450px] lg:min-h-0">
+          <div className="relative w-full max-w-[400px] aspect-[3/4] overflow-hidden bg-ink-950 rounded-sm shadow-[0_20px_50px_rgba(201,168,122,0.22)] border border-gold-500/20 group">
+            <Image
+              src="/images/blog/busan_yeongdo_sunset_clean.png"
+              alt="Busan Yeongdo Sunset"
+              fill
+              priority
+              sizes="(min-width: 1024px) 30vw, 85vw"
+              className="object-cover opacity-85 transition-transform duration-[12s] ease-out group-hover:scale-105"
+            />
+            {/* Faint gold/sepia overlay */}
+            <div className="absolute inset-0 bg-[#C9A87A]/10 mix-blend-multiply pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-950/30 to-transparent pointer-events-none" />
+            
+            {/* Magazine Cover Overlay Elements */}
+            <div className="absolute inset-0 p-6 flex flex-col justify-between text-left select-none pointer-events-none">
+              {/* Top Row */}
+              <div className="flex items-center justify-between">
+                <span className="bg-white/10 backdrop-blur-md text-cream-50 border border-white/20 px-3 py-1 text-[8px] font-sans font-bold uppercase tracking-[0.25em] shadow-lg rounded-xs">
+                  Concierge Choice
+                </span>
+                <span className="text-[9px] uppercase tracking-[0.3em] text-cream-100/50 font-bold font-serif hidden sm:inline">
+                  JOURNEYS
+                </span>
+              </div>
 
-            {/* Bottom Row: Editorial Titles embedded on the picture itself! */}
-            <div className="max-w-md drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-              <h2 className="font-serif text-3xl md:text-4.5xl font-light text-cream-50 leading-none uppercase tracking-wide">
-                Busan's <br />
-                Rugged Soul: <br />
-                <span className="text-gold-400 font-normal">Yeongdo</span>
-              </h2>
-              <p className="mt-4 text-[10px] uppercase tracking-[0.25em] text-cream-100/70 font-semibold leading-relaxed max-w-[280px]">
-                Exploring the cliffside secrets & golden magic of southern Korea.
-              </p>
+              {/* Bottom Row */}
+              <div>
+                <span className="text-[9px] uppercase tracking-[0.3em] text-gold-400 font-bold font-sans">
+                  LOCAL SECRETS
+                </span>
+                <h2 className="font-serif text-2xl md:text-3.5xl font-light text-cream-50 leading-none uppercase tracking-wide mt-1">
+                  Busan's <br />
+                  Rugged Soul: <br />
+                  <span className="text-gold-400 font-normal">Yeongdo</span>
+                </h2>
+                <p className="mt-3.5 text-[9px] uppercase tracking-[0.2em] text-cream-100/70 font-semibold leading-relaxed max-w-[240px]">
+                  Exploring the cliffside secrets & golden magic of southern Korea.
+                </p>
+              </div>
             </div>
           </div>
         </div>
