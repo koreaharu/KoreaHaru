@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Hero } from '@/components/home/Hero';
 import { ExchangeRateWidget } from '@/components/home/ExchangeRateWidget';
 import { DirectBookingWidget } from '@/components/home/DirectBookingWidget';
+import { FeaturedEditorialBoard } from '@/components/home/FeaturedEditorialBoard';
 import { QuickBookingBar } from '@/components/home/QuickBookingBar';
 import { ServiceCategories } from '@/components/home/ServiceCategories';
 import { FeaturedDestinations } from '@/components/home/FeaturedDestinations';
@@ -39,6 +40,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Featured Editorial Board (Magazine-cover Choice Card) */}
+      <FeaturedEditorialBoard />
 
       <FeaturedDestinations />
       <QuickBookingBar />

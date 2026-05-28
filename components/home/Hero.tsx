@@ -20,7 +20,7 @@ export function Hero() {
 
       <Container className="relative flex h-full flex-col items-center justify-center text-center text-cream-50">
         <p className="eyebrow text-cream-50/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">{t('eyebrow')}</p>
-        <h1 className="mt-6 max-w-4xl font-serif text-4xl font-light leading-tight text-cream-50 drop-shadow-[0_4px_12px_rgba(0,0,0,0.95)] md:text-7xl">
+        <h1 className="mt-6 max-w-4xl font-serif text-4xl font-light leading-tight text-transparent bg-clip-text bg-gradient-to-r from-cream-100 via-gold-400 to-cream-200 drop-shadow-[0_4px_12px_rgba(0,0,0,0.95)] md:text-7xl pb-2">
           {t('title')}
         </h1>
         <p className="mt-6 max-w-2xl text-sm leading-relaxed text-cream-50/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] font-medium md:text-lg">
