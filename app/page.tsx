@@ -28,12 +28,12 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-7xl px-6 md:px-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch lg:justify-between">
             {/* Exchange Rate Card */}
-            <div className="w-full lg:w-[32%] flex justify-center lg:justify-start">
+            <div className="w-full lg:w-[32%] flex flex-col items-stretch">
               <ExchangeRateWidget />
             </div>
             
             {/* Direct Booking Comparison Ticker & Links */}
-            <div className="w-full lg:w-[68%] flex items-center">
+            <div className="w-full lg:w-[68%] flex flex-col items-stretch">
               <DirectBookingWidget />
             </div>
           </div>

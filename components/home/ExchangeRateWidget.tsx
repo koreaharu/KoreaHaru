@@ -63,58 +63,60 @@ export function ExchangeRateWidget() {
   }, []);
 
   return (
-    <article className="w-full max-w-[330px] bg-white border border-cream-200/50 p-6 rounded-sm shadow-[0_20px_50px_rgba(201,168,122,0.08)] text-left select-none animate-fade-in transition-all duration-300 hover:border-gold-500/20 hover:shadow-[0_20px_50px_rgba(201,168,122,0.12)]">
-      <header className="flex items-center justify-between border-b border-cream-200 pb-3.5 mb-5">
-        <div className="flex items-center gap-2">
-          <TrendingUp className="h-5 w-5 text-gold-600" />
-          <h3 className="font-serif text-base font-semibold tracking-wide text-ink-900">Live Exchange Rates</h3>
-        </div>
-        <div className="flex items-center gap-1.5">
-          {isLive ? (
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-sage opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-sage"></span>
+    <article className="w-full lg:max-w-[330px] h-full bg-white border border-cream-200/50 p-6 rounded-sm shadow-[0_20px_50px_rgba(201,168,122,0.08)] text-left select-none animate-fade-in transition-all duration-300 hover:border-gold-500/20 hover:shadow-[0_20px_50px_rgba(201,168,122,0.12)] flex flex-col justify-between">
+      <div>
+        <header className="flex items-center justify-between border-b border-cream-200 pb-3.5 mb-5">
+          <div className="flex items-center gap-2">
+            <TrendingUp className="h-5 w-5 text-gold-600" />
+            <h3 className="font-serif text-base font-semibold tracking-wide text-ink-900">Live Exchange Rates</h3>
+          </div>
+          <div className="flex items-center gap-1.5">
+            {isLive ? (
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-sage opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-sage"></span>
+              </span>
+            ) : (
+              <span className="h-2 w-2 rounded-full bg-cream-300"></span>
+            )}
+            <span className="text-[10px] text-ink-400 uppercase tracking-widest font-bold">
+              {isLive ? 'Live' : 'Muted'}
             </span>
-          ) : (
-            <span className="h-2 w-2 rounded-full bg-cream-300"></span>
-          )}
-          <span className="text-[10px] text-ink-400 uppercase tracking-widest font-bold">
-            {isLive ? 'Live' : 'Muted'}
-          </span>
-        </div>
-      </header>
+          </div>
+        </header>
 
-      <div className="space-y-4">
-        {/* USD */}
-        <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
-          <span className="text-xs font-bold text-ink-500 tracking-wider">USD</span>
-          <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
-            {loading ? '...' : `1 USD = ${rates.USD.toLocaleString()} KRW`}
-          </p>
-        </div>
+        <div className="space-y-4">
+          {/* USD */}
+          <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
+            <span className="text-xs font-bold text-ink-500 tracking-wider">USD</span>
+            <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
+              {loading ? '...' : `1 USD = ${rates.USD.toLocaleString()} KRW`}
+            </p>
+          </div>
 
-        {/* EUR */}
-        <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
-          <span className="text-xs font-bold text-ink-500 tracking-wider">EUR</span>
-          <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
-            {loading ? '...' : `1 EUR = ${rates.EUR.toLocaleString()} KRW`}
-          </p>
-        </div>
+          {/* EUR */}
+          <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
+            <span className="text-xs font-bold text-ink-500 tracking-wider">EUR</span>
+            <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
+              {loading ? '...' : `1 EUR = ${rates.EUR.toLocaleString()} KRW`}
+            </p>
+          </div>
 
-        {/* THB */}
-        <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
-          <span className="text-xs font-bold text-ink-500 tracking-wider">THB</span>
-          <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
-            {loading ? '...' : `1 THB = ${rates.THB.toLocaleString()} KRW`}
-          </p>
-        </div>
+          {/* THB */}
+          <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
+            <span className="text-xs font-bold text-ink-500 tracking-wider">THB</span>
+            <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
+              {loading ? '...' : `1 THB = ${rates.THB.toLocaleString()} KRW`}
+            </p>
+          </div>
 
-        {/* VND */}
-        <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
-          <span className="text-xs font-bold text-ink-500 tracking-wider">VND</span>
-          <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
-            {loading ? '...' : `1,000 VND = ${rates.VND.toLocaleString()} KRW`}
-          </p>
+          {/* VND */}
+          <div className="flex items-center justify-between border-b border-cream-100 pb-2.5 last:border-b-0 last:pb-0">
+            <span className="text-xs font-bold text-ink-500 tracking-wider">VND</span>
+            <p className="font-serif text-base font-medium text-ink-900 tracking-wide">
+              {loading ? '...' : `1,000 VND = ${rates.VND.toLocaleString()} KRW`}
+            </p>
+          </div>
         </div>
       </div>
 
