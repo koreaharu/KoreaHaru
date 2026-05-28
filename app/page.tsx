@@ -4,7 +4,6 @@ import { ExchangeRateWidget } from '@/components/home/ExchangeRateWidget';
 import { DirectBookingWidget } from '@/components/home/DirectBookingWidget';
 import { ServiceCategories } from '@/components/home/ServiceCategories';
 import { FeaturedDestinations } from '@/components/home/FeaturedDestinations';
-import { WhyKoreaHaru } from '@/components/home/WhyKoreaHaru';
 import { Testimonials } from '@/components/home/Testimonials';
 import { LatestFromJournal } from '@/components/home/LatestFromJournal';
 import { CtaStrip } from '@/components/home/CtaStrip';
@@ -42,7 +41,6 @@ export default function HomePage() {
 
       <FeaturedDestinations />
       <ServiceCategories />
-      <WhyKoreaHaru />
       <Testimonials />
       <LatestFromJournal />
       <CtaStrip />
