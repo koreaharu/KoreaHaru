@@ -19,6 +19,16 @@ import {
 
 const CHANNELS = [
   { 
+    name: 'Wise Direct Transfer', 
+    color: '#00B9FF', // Wise Brand Blue
+    bgColor: 'rgba(0, 185, 255, 0.08)',
+    borderColor: 'rgba(0, 185, 255, 0.25)',
+    hoverBorderColor: 'rgba(0, 185, 255, 0.6)',
+    desc: 'Pay directly via Wise.com (formerly TransferWise) to receive our 15% – 20% Direct Booking Discount.',
+    payText: 'Wise 해외송금 할인 예약',
+    symbol: 'W'
+  },
+  { 
     name: 'TripAdvisor', 
     color: '#00AF87', 
     bgColor: 'rgba(0, 175, 135, 0.08)',
@@ -87,7 +97,7 @@ const DESTINATIONS = [
 ];
 
 export default function BookingPage() {
-  const [selectedChannel, setSelectedChannel] = useState<string>('TripAdvisor');
+  const [selectedChannel, setSelectedChannel] = useState<string>('Wise Direct Transfer');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -386,33 +396,56 @@ export default function BookingPage() {
             
             {success ? (
               <div className="space-y-4">
-                <p className="text-sm text-ink-700 leading-relaxed">
-                  예약 세부 정보가 성공적으로 확인되었습니다! 선택하신 <strong>{activeChannel.name}</strong> 에스크로 결제망으로 지금 즉시 안전하게 연동 및 리다이렉트됩니다.
-                </p>
+                {activeChannel.name === 'Wise Direct Transfer' ? (
+                  <p className="text-sm text-ink-700 leading-relaxed">
+                    예약 신청이 성공적으로 접수되었습니다! 입력하신 연락처(WhatsApp/이메일)로 <strong>15% – 20% 수수료 할인</strong>이 적용된 Wise 전용 입금 계좌 정보 및 최종 인보이스를 신속하게 전송해 드립니다.
+                  </p>
+                ) : (
+                  <p className="text-sm text-ink-700 leading-relaxed">
+                    예약 세부 정보가 성공적으로 확인되었습니다! 선택하신 <strong>{activeChannel.name}</strong> 에스크로 결제망으로 지금 즉시 안전하게 연동 및 리다이렉트됩니다.
+                  </p>
+                )}
                 <div className="bg-cream-50 p-4 rounded-sm border border-cream-200 text-left space-y-2 text-xs text-ink-800 font-mono">
                   <div>· 예약자: {formData.name}</div>
                   <div>· 서비스: {formData.service.split(' (')[0]}</div>
                   <div>· 일정: {formData.date}</div>
-                  <div>· 결제수단: {activeChannel.name} Escrow</div>
+                  <div>· 결제수단: {activeChannel.name === 'Wise Direct Transfer' ? 'Wise Direct Remittance (Discounted)' : `${activeChannel.name} Escrow`}</div>
                 </div>
               </div>
             ) : (
               <p className="text-sm text-ink-700 leading-relaxed">
-                {activeChannel.name} 예약 정산 게이트웨이로 바로 연결하여 간편 신용카드/앱카드로 실시간 원화 결제를 수행할 수 있습니다.
+                {activeChannel.name === 'Wise Direct Transfer' ? (
+                  'Wise 송금을 이용하시면 플랫폼 수수료(15%~20%)가 제외된 가장 저렴한 직거래 가격 혜택을 받으실 수 있습니다.'
+                ) : (
+                  `${activeChannel.name} 예약 정산 게이트웨이로 바로 연결하여 간편 신용카드/앱카드로 실시간 원화 결제를 수행할 수 있습니다.`
+                )}
               </p>
             )}
 
             <div className="mt-8 space-y-3">
-              <a
-                href={`https://www.google.com/search?q=KoreaHaru+${activeChannel.name}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 text-sm font-semibold text-white rounded-sm transition-colors shadow-sm"
-                style={{ backgroundColor: activeChannel.color }}
-              >
-                {activeChannel.name} 결제창으로 이동하기
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
+              {activeChannel.name === 'Wise Direct Transfer' ? (
+                <a
+                  href="https://wise.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 text-sm font-semibold text-white rounded-sm transition-colors shadow-sm animate-pulse"
+                  style={{ backgroundColor: activeChannel.color }}
+                >
+                  Wise 공식 사이트 방문하기
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              ) : (
+                <a
+                  href={`https://www.google.com/search?q=KoreaHaru+${activeChannel.name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 text-sm font-semibold text-white rounded-sm transition-colors shadow-sm"
+                  style={{ backgroundColor: activeChannel.color }}
+                >
+                  {activeChannel.name} 결제창으로 이동하기
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              )}
               
               <button
                 type="button"
