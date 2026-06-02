@@ -99,7 +99,62 @@ h1, h2, h3 {
   color: #2C2418;
 }
 
+
+/* Custom Review Cards */
+.blog-content .verdict-card {
+  @apply bg-cream-100/50 border border-gold-500/30 p-6 md:p-8 rounded-sm my-8 shadow-sm;
+}
+.blog-content .verdict-header {
+  @apply flex items-center justify-between border-b border-gold-500/20 pb-4 mb-4;
+}
+.blog-content .verdict-title {
+  @apply font-serif text-xl md:text-2xl font-light text-ink-900 m-0 !important;
+}
+.blog-content .verdict-rating {
+  @apply text-gold-600 font-serif text-lg md:text-xl font-medium tracking-wider;
+}
+.blog-content .verdict-content {
+  @apply text-ink-800 text-sm md:text-base leading-relaxed m-0;
+}
+
+.blog-content .pros-cons-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 my-8;
+}
+.blog-content .pros-card {
+  @apply bg-cream-50/50 border-l-4 border-accent-sage p-5 rounded-r-sm;
+}
+.blog-content .cons-card {
+  @apply bg-cream-50/50 border-l-4 border-accent-rust p-5 rounded-r-sm;
+}
+.blog-content .card-title {
+  @apply font-serif text-lg font-normal mb-3 mt-0 text-ink-900;
+}
+.blog-content .card-list {
+  @apply list-none pl-0 mb-0 !important;
+}
+.blog-content .card-list li {
+  @apply relative pl-5 mb-2.5 text-xs md:text-sm text-ink-700 font-light !important;
+}
+.blog-content .card-list li::before {
+  content: "•";
+  @apply absolute left-0 text-gold-500 font-bold;
+}
+.blog-content .pros-card .card-list li::before {
+  @apply text-accent-sage;
+}
+.blog-content .cons-card .card-list li::before {
+  @apply text-accent-rust;
+}
+
+.blog-content .travel-tip-card {
+  @apply bg-ink-900 text-cream-50 p-6 rounded-sm my-8 border-l-4 border-gold-500 relative overflow-hidden;
+}
+.blog-content .travel-tip-card p {
+  @apply text-cream-200 leading-relaxed text-sm m-0 !important;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
+
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
